@@ -1,7 +1,6 @@
-
 * {
-  box-sizing: border-box;
-  margin: 0;
+  box-sizing:border-box;
+  margin:0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -10,33 +9,35 @@ body {
   background: #f0eaea;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 40px 20px;
+  min-height: 100vh;
 }
 
-
 h1 {
+    text-shadow: text-shadow: 2px 2px 4px #333;
   text-align: center;
   font-size: 2.5rem;
   color: #c05e5e;
   margin-bottom: 30px;
-  transition: all 0.3s ease;
 }
-
-h1:hover {
-  transform: scale(1.05);
-  color: #f08a8a;
+h1:hover{
+    text-shadow:#f08a8a;
 }
-
 
 .todo-app {
   width: 100%;
   max-width: 400px;
   background: #fff;
-  padding: 25px ;
-  border-radius: 26px;
+  margin-bottom: 200px;
+  padding: 25px;
+  border-radius: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
 }
-
 
 .btn {
   width: 100%;
@@ -56,24 +57,55 @@ h1:hover {
   transform: translateY(-2px);
 }
 
-
 .task-form {
-  display: none; /* hidden until opened */
+  display: none;
+  position: fixed;  /* fixed keeps it in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 360px;
   background: #fff7f7;
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;  /* ensures it stays above all tasks */
 }
 
+
 .task-form.show {
-  display: block;
+  display: flex;
+}
+
+.task-form-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-task-form-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-task-form-btn svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.close-task-form-btn:hover svg {
+  transform: rotate(90deg);
+  fill: #f44336;
 }
 
 .task-form-body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 10px;
 }
 
 .task-form-label {
@@ -90,8 +122,8 @@ h1:hover {
 
 .form-control:focus {
   border-color: #f08a8a;
+  outline: none;
 }
-
 
 #tasks-container {
   display: flex;
@@ -115,13 +147,16 @@ h1:hover {
   background: #ffcaca;
 }
 
-
 #confirm-close-dialog {
   border: none;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   font-size: 0.95rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .confirm-close-dialog-btn-container {
@@ -142,4 +177,19 @@ h1:hover {
 
 #confirm-close-dialog button:hover {
   background: #f0c5c5;
+}
+
+@media (min-width: 576px) {
+  .todo-app,
+  .task-form {
+    width: 400px;
+  }
+
+  .task-form-label {
+    font-size: 1rem;
+  }
+
+  .form-control {
+    padding: 12px;
+  }
 }
