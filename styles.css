@@ -1,0 +1,145 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f0eaea;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #c05e5e;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+h1:hover {
+  transform: scale(1.05);
+  color: #f08a8a;
+}
+
+
+.todo-app {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 25px ;
+  border-radius: 26px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+
+.btn {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: #f8f0f0;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background: #f0c5c5;
+  transform: translateY(-2px);
+}
+
+
+.task-form {
+  display: none; /* hidden until opened */
+  background: #fff7f7;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.task-form.show {
+  display: block;
+}
+
+.task-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.task-form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  border-color: #f08a8a;
+}
+
+
+#tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffeaea;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateX(2px);
+  background: #ffcaca;
+}
+
+
+#confirm-close-dialog {
+  border: none;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
+}
+
+.confirm-close-dialog-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#confirm-close-dialog button {
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: #f8f0f0;
+  transition: all 0.2s ease;
+}
+
+#confirm-close-dialog button:hover {
+  background: #f0c5c5;
+}
